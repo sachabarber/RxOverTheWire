@@ -17,6 +17,9 @@ namespace Client
               where value <= 5 || value >= 8
               select string.Format("The incoming value has been doubled to {0}", value * 2);
 
+
+
+
             using (query.Subscribe(
               value => Console.WriteLine("Client observed: " + value),
               ex => Console.WriteLine("Error: {0}", ex.Message),

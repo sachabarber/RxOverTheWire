@@ -25,8 +25,6 @@ namespace FormServer
 
         private void CreateServer()
         {
-            //var service = source.ServeQbservableTcp(new IPEndPoint(IPAddress.Loopback, 3205));
-
             var service = source.ServeQbservableTcp(
                 new IPEndPoint(IPAddress.Loopback, 3205),
                 new QbservableServiceOptions()
@@ -36,8 +34,6 @@ namespace FormServer
                     AllowExpressionsUnrestricted = true
                 }
             );
-
-
 
             serverDisposable = service.Subscribe(
               client => Console.WriteLine("Client shutdown."),
